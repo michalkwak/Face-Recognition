@@ -16,7 +16,7 @@ On Saturday I researched the problem more to understand it a bit better and fini
 ## Problems and challanges
 
 It still remains a bit unclear to me to what extent I can use Python libraries and premade methods.
-I'm also still trying to udenrstand all the math behind the algorithms fully and which computeations I should implement myself.
+I'm also still trying to udenrstand all the math behind the algorithms fully and which computations I should implement myself.
 
 ## Next week
 
