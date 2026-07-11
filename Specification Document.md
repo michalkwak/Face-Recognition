@@ -25,19 +25,17 @@ eigendecomposition and project faces into it for classification.
 
 ## Algorithms used
 
-- Vector/matrix representation of flattened images
+- Vector/matrix representation of images
 - Covariance matrix computation
 - Eigendecomposition using the Jacobian method
-- Nearest-neighbor search for classification
+- Nearest-neighbor for classification
 
 ## Expected time and space complexity
 
-n = number of training images, d = number of pixels in an image
-
-First the covariance matrix construction (reduced n×n form) which takes O(n²·d) time and O(n²) space for the matrix itself and O(n·d) space for training data.
-Then the Jacobi algorithm on the n×n covariance matrix where each rotation updates two rows/columns in O(n) time, so a full computation over all off-diagonal elements is O(n³) with O(n²) space.
-Recovering eigenfaces from the reduced eigenvectors is O(n·d) time.
-Finally the classification of an input image takes O(k) to project into eigenspace, where k = eigenfaces retained, and O(n·k) to compare against all training projections.
+We have n training images and d pixels in an image. The covariance matrix construction should take O(n^2 * d) time. The matrix itself takes up O(n^2) space and the training data takes up O(n * d) 
+Then the Jacobian algorithm on the covariance matrix where each rotation updates two rows/columns in O(n) time, so a full computation over all not diagonal elements is O(n³) time with O(n²) space.
+Taking eigenfaces from the reduced eigenvectors is O(n * d) time.
+Finally the classification of an input image takes O(k) to turn into eigenspace (k = number of eigenfaces) and O(n * k) to compare against all training projections.
 
 
 ## Sources
