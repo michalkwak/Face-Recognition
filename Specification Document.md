@@ -14,7 +14,9 @@ projecting them into this space and finding the nearest training face.
 
 The core is the PCA pipeline. I need to compute the mean face and
 covariance structure, extract eigenfaces with a Jacobi
-eigendecomposition and project faces into it for classification.
+eigendecomposition and project faces into it for classification. 
+Each face can then be represented as a vector of weights showing how much each eigenface contributes to it. 
+I project a new face into the same space and compare its weight vector to the training ones by Euclidian distance.
 
 ## Inputs
 
