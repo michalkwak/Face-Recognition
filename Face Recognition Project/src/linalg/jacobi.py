@@ -11,12 +11,12 @@ def jacobi_eigenvalue(A, tol=1e-14, max_iter=1000):
     Inputs: 
         symmetric matrix A
         the largest allowed off-diagonal element threshold
-        maximum iterations
+        maximum rotations
 
     Returns:
-        eigenvalues: 1D array of eigenvalues
-        eigenvectors: 2D array where each column eigenvectors[:, i] is the eigenvector for eigenvalues[i]
-        number of rotations actually performed
+        eigenvalues: vector of eigenvalues
+        eigenvectors: matrix where each column eigenvectors[:, i] is the eigenvector for eigenvalues[i]
+        number of rotations performed
     '''
     pass
 

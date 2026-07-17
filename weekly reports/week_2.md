@@ -1,7 +1,11 @@
 # Week 2 report
 
-I started working on the core on Thursday. I chose the Olivetti faces dataset from scikit-learn. I researched the Jacobian eigenvalue decomposition algorithm and implemented the outline of necessary methods. I created the max_off_diagonal() method which returns the largest off-diagonal element of matrix A. I also created a rough directory hierarchy for my project.
+I started working on the core on Thursday. I chose the Olivetti faces dataset from scikit-learn. I researched the Jacobian eigenvalue decomposition algorithm and implemented the outline of necessary methods. I created the max_off_diagonal() method which returns the largest off-diagonal element of matrix A. I also created a rough directory hierarchy for my project. (2.5h)
+
+On Friday I digged into testing. I read all the course pages on testing and learned how to implement unit tests. I installed and initialized Poetry. I implemented the first two unit tests for the max_off_diagonal() method I created on thursday. (3h)
 
 ## Problems and challanges
+
+I've had some challanges with installing and initializing Poetry. However, I did manage to get it working.
 
 ## Next week
