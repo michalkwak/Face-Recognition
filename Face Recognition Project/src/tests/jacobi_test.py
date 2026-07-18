@@ -13,12 +13,12 @@ class TestJacobi(unittest.TestCase):
     def test_max_off_diagonal_on_diagonal_matrix_returns_zero(self):
         diagonal = np.diag([1.0, 2.0, 3.0])
 
-        max_val, p, q = max_off_diagonal(diagonal, 3)
+        max_val, k, l = max_off_diagonal(diagonal, 3)
 
         self.assertEqual(max_val, 0.0)
 
     def test_max_off_diagonal_finds_correct_element(self):
-        max_val, p, q = max_off_diagonal(self.matrix, 3)
+        max_val, k, l = max_off_diagonal(self.matrix, 3)
 
         self.assertEqual(max_val, 2.0)
-        self.assertEqual((p, q), (0, 2))
+        self.assertEqual((k, l), (0, 2))
