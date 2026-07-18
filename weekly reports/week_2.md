@@ -11,3 +11,5 @@ On Saturday I worked more on the Jacobian algorithm. (1.5h)
 I've had some challanges with installing and initializing Poetry. However, I did manage to get it working.
 
 ## Next week
+
+Next week I plan to finish implementing the jacobi algorithm and write more tests. I want to start tracking the test coverage more rigorously as well.
