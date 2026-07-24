@@ -16,7 +16,7 @@
 
 **`test_diagonal_matrix_returns_immediately()`** → verifies that a matrix already in diagonal form is recognized as converged in 0 iterations and returns its diagonal entries unchanged as the eigenvalues
 **`test_ev_matches_numpy_2x2(), test_ev_matches_numpy_3x3`** → verifies correctness of the full algorithm by comparing the computed eigenvalues against `numpy.linalg.eigh` on both a 2x2 and a 3x3 symmetric matrix with distinct eigenvalues within a tolerance
-**`test_eigenvectors_are_orthonormal()`** → verifies that the full set of returned eigenvectors satisfies `V^T V = I`, confirming they form a valid orthonormal basis instead of just individually-normalized vectors
+**`test_eigenvectors_are_orthonormal()`** → verifies that the full set of returned eigenvectors satisfies `V^T V = I`, confirming they form a valid orthonormal basis instead of just individually normalized vectors
 **`test_satisfies_eigenvalue_equation()`** → verifies correctness independent of any reference implementation by directly checking that `A v = lambda v` holds for every computed (eigenvalue, eigenvector) pair, which remains true regardless of sign or ordering conventions
 **`test_reconstructs_original_matrix()`** → verifies that `V · diag(eigenvalues) · V^T` reproduces the original input matrix, confirming the decomposition is a correct factorization and not just a set of individually valid eigenpairs
-**`test_converges_within_iterations()`** → verifies that a "reasonable" 3x3 matrix converges well below the `max_iterations` cap
+**`test_converges_within_iterations()`** → verifies that a "reasonable" 3x3 matrix converges well below `max_iterations`
