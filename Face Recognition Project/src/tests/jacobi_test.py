@@ -128,7 +128,3 @@ class TestJacobiEigenvalue(unittest.TestCase):
     def test_converges_within_iterations(self):
         eigenvalues, eigenvectors, iterations = jacobi_eigenvalue(self.a)
         self.assertLess(iterations, 100)
-
-    
-
-
