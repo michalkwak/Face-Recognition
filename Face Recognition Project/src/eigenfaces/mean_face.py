@@ -35,7 +35,7 @@ def mean_subtract(images, mean_face):
 
     Return:
         2D array of shape (m, p): the mean-subtracted images
-        stacked as rows (Turk & Pentland notation - one mean-subtracted face per row rather than per column)
+        stacked as rows (one mean-subtracted face per row)
     """
     if images.shape[1] != mean_face.shape[0]:
         raise ValueError(
