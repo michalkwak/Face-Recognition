@@ -36,11 +36,11 @@
 
 **`test_mean_of_images()`** → verifies that `compute_mean_face` returns the correct elementwise average for a small set of training images
 
-**`test_mean_of_single_image_equals_the_image()`** → verifies the edge case where the training set contains only one image, confirming the mean face is simply that image
+**`test_mean_of_single_image_equals_the_image()`** → verifies that when the training set contains only one image, the mean face is simply that image
 
 **`test_mean_face_has_correct_shape()`** → verifies that the returned mean face has shape `(p,)` matching the pixel dimension of the input images, independent of how many training images were used
 
-**`test_raises_on_empty_input()`** → verifies that `compute_mean_face` raises a `ValueError` when given zero training images, rather than silently returning a meaningless result
+**`test_raises_on_empty_input()`** → verifies that `compute_mean_face` raises a `ValueError` when given zero training images, rather than returning a result
 
 **`test_raises_on_wrong_dimensionality()`** → verifies that a 1D vector, instead of the expected 2D matrix of shape `(m, p)`, is rejected with a `ValueError`
 
@@ -48,7 +48,7 @@
 
 **`test_preserves_shape()`** → verifies that mean-subtraction does not change the shape of the training set
 
-**`test_raises_on_wrong_dimension()`** → verifies that passing a mean face vector of the wrong length raises a `ValueError` instead of silently broadcasting incorrectly
+**`test_raises_on_wrong_dimension()`** → verifies that passing a mean face vector of the wrong length raises a `ValueError`
 
 ### More comprehensive tests 2
 

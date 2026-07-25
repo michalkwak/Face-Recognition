@@ -7,15 +7,15 @@ import numpy as np
 
 def compute_mean_face(images):
     """
-    Computes the mean face of a set of training images.
+    Computes the mean face of a set of training images
 
     Input:
         2D array of shape (m, p), where m is the number of
         training images and p is the number of pixels per
-        image (each row is one flattened image).
+        image (so each row is one flattened image)
 
     Return:
-        1D array of shape (p,): the mean face.
+        1D array of shape (p,): the mean face
     """
     if images.ndim != 2:
         raise ValueError("images must be a 2D array of shape (m, p)")
@@ -27,7 +27,7 @@ def compute_mean_face(images):
 
 def mean_subtract(images, mean_face):
     """
-    Subtracts the mean face from every image in the training set.
+    Subtracts the mean face from every image in the training set
 
     Inputs:
         images: 2D array of shape (m, p), the training images
