@@ -1,9 +1,11 @@
 import numpy as np
 from math import sqrt
 
-def jacobi_eigenvalue(A, tol=1e-14, max_iter=1000):
+def jacobi_eigenvalue_classic(A, tol=1e-14, max_iter=40000):
     '''
-    Diagonalizes a symmetric matrix using the Jacobi eigenvalue algorithm, that is, st each step, 
+    NOT IN USE
+
+    Diagonalizes a symmetric matrix using the Jacobi eigenvalue algorithm, that is, at each step, 
     finds the largest off-diagonal element and applies
     a rotation that zeroes it out, repeating until all off-diagonal
     elements are below "tol".
@@ -32,6 +34,29 @@ def jacobi_eigenvalue(A, tol=1e-14, max_iter=1000):
 
     print("The matrix did not converge within max_iter")
     return np.diag(a), v, max_iter
+
+def jacobi_eigenvalue(A, tol=1e-10, max_sweeps=100):
+    """
+    Diagonalizes a symmetric matrix using cyclic Jacobi sweeps: every off-diagonal pair (p, q) is rotated once per sweep 
+    (before I used the classic method, where it would target the single largest element each iteration, making it run for way too long)
+    """
+    a = A.copy().astype(float)
+    n = a.shape[0]
+    v = np.identity(n)
+
+    for sweep in range(max_sweeps):
+        off_diagonal_sum = sum(a[i, j] ** 2 for i in range(n - 1) for j in range(i + 1, n))
+
+        if off_diagonal_sum < tol:
+            return np.diag(a), v, sweep
+
+        for k in range(n - 1):
+            for l in range(k + 1, n):
+                if abs(a[k, l]) > 1e-14:  # skip pairs close to zero
+                    rotate(a, v, n, k, l)
+
+    print("The matrix did not converge within max_sweeps")
+    return np.diag(a), v, max_sweeps
 
 def max_off_diagonal(A, n):
     '''Returns the largest off-diagonal element of A[p, q] where p < q'''
@@ -87,12 +112,3 @@ def rotate_pair(a, row1, col1, row2, col2, s, tau):
     a1, a2 = a[row1, col1], a[row2, col2]
     a[row1, col1] = a1 - s * (a2 + tau * a1)
     a[row2, col2] = a2 + s * (a1 - tau * a2)
-
-if __name__ == '__main__':
-    A = np.array([
-            [6.0, 1.0, 2.0],
-            [1.0, 0.0, 1.5],
-            [0.0, 2.0, 2.0],
-        ])
-    
-    print(jacobi_eigenvalue(A, tol=1e-14, max_iter=1000))
