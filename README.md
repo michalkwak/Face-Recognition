@@ -5,6 +5,9 @@ program learns a low-dimensional "face space" that captures the directions of gr
 variation across the training faces, then classifies new, unseen face images by
 projecting them into this space and finding the nearest training face by distance.
 
+The core pipeline (mean face, covariance matrix, eigenvalue decomposition and NN classification) is fully implemented and (almost) tested.
+Using the Olivetti dataset, the program produces around 85% accuracy with 20 components.
+
 # Installation and running the program
 
 Install the dependencies:
@@ -19,9 +22,7 @@ To run the program:
 
 ## Tests
 
+To run tests:
+
 <code>poetry run pytest</code>
 
-# Current status
-
-The core pipeline (mean face, covariance matrix, eigenvalue decomposition and NN classification) is fully implemented and (almost) tested.
-Using the Olivetti dataset, the program produces around 85% accuracy with 20 components.
