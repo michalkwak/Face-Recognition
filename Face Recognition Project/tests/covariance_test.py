@@ -1,10 +1,9 @@
 import unittest
 import numpy as np
 
-from src.eigenfaces.covariance_matrix import (
-    compute_covariance_matrix,
-    compute_full_covariance_matrix,
-)
+from src.eigenfaces.covariance_matrix import compute_covariance_matrix
+from src.eigenfaces.covariance_matrix import compute_full_covariance_matrix
+
 
 
 class TestComputeCovarianceMatrix(unittest.TestCase):
@@ -13,7 +12,7 @@ class TestComputeCovarianceMatrix(unittest.TestCase):
         # two mean-subtracted images
         mean_subtracted = np.array([
             [1.0, 0.0, -1.0],
-            [0.0, 2.0, -2.0],
+            [0.0, 2.0, -2.0]
         ])
 
         l_matrix = compute_covariance_matrix(mean_subtracted)
@@ -21,7 +20,7 @@ class TestComputeCovarianceMatrix(unittest.TestCase):
         # L[i,j] = dot product of image i and image j
         expected = np.array([
             [2.0, 2.0],
-            [2.0, 8.0],
+            [2.0, 8.0]
         ])
         np.testing.assert_allclose(l_matrix, expected)
 
@@ -74,7 +73,7 @@ class TestComputeFullCovarianceMatrix(unittest.TestCase):
         mean_subtracted = np.array([
             [1.0, 0.0, -1.0, 2.0],
             [0.0, 2.0, -2.0, 1.0],
-            [1.0, 1.0, -1.0, -1.0],
+            [1.0, 1.0, -1.0, -1.0]
         ])
 
         l_matrix = compute_covariance_matrix(mean_subtracted)

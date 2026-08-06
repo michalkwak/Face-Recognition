@@ -9,7 +9,7 @@ class TestComputeMeanFace(unittest.TestCase):
     def test_mean_of_images(self):
         images = np.array([
             [0.0, 2.0, 4.0],
-            [2.0, 4.0, 6.0],
+            [2.0, 4.0, 6.0]
         ])
 
         mean_face = compute_mean_face(images)
@@ -47,7 +47,7 @@ class TestMeanSubtract(unittest.TestCase):
     def setUp(self):
         self.images = np.array([
             [0.0, 2.0, 4.0],
-            [2.0, 4.0, 6.0],
+            [2.0, 4.0, 6.0]
         ])
         self.mean_face = compute_mean_face(self.images)
 
@@ -56,7 +56,7 @@ class TestMeanSubtract(unittest.TestCase):
 
         expected = np.array([
             [-1.0, -1.0, -1.0],
-            [1.0, 1.0, 1.0],
+            [1.0, 1.0, 1.0]
         ])
         np.testing.assert_allclose(result, expected)
 

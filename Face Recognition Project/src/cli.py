@@ -4,7 +4,7 @@ Command-line interface for the eigenfaces
 1. Loads the ORL/Olivetti dataset
 2. Trains on most images per person
 3. Holds one out per person for testing
-4. eports accuracy
+4. Reports accuracy
 """
 import argparse
 import numpy as np
@@ -14,7 +14,7 @@ from eigenfaces.mean_face import compute_mean_face, mean_subtract
 from eigenfaces.covariance_matrix import compute_covariance_matrix
 from eigenfaces.eigenfaces import compute_eigenfaces
 from eigenfaces.classifier import project_all, predict
-
+from data.visualization import show_eigenfaces, show_mean_face
 
 def load_train_test_split():
     """
@@ -85,6 +85,9 @@ def main():
 
     print("Comparing images")
     compare(mean_face, eigenfaces, train_images, train_labels, test_images, test_labels)
+
+    show_mean_face(mean_face, image_shape=(64, 64))
+    show_eigenfaces(eigenfaces, eigenvalues, image_shape=(64, 64), n=16)
 
 
 if __name__ == "__main__":
