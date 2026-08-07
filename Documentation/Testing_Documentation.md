@@ -53,3 +53,32 @@
 ### More comprehensive tests 2
 
 **`test_result_has_zero_mean()`** → verifies that averaging the mean-subtracted training set across all images results in the zero vector
+
+## covariance_test.py
+
+### Unit tests 3
+
+**`test_matches_example()`** → verifies that `compute_covariance_matrix` produces the exact expected values for a small hand-computed example, that is `L[i,j]` equals the dot product of mean-subtracted images `i` and `j`
+
+**`test_result_has_correct_shape()`** → verifies that the reduced covariance matrix has shape `(m, m)`, where `m` is the number of training images, rather than the full `(p, p)` pixel space
+
+**`test_result_is_symmetric()`** → verifies that the computed matrix satisfies `L = L^T`
+
+**`test_raises_on_empty_input()`** → verifies that `compute_covariance_matrix` raises a `ValueError` when given zero training images
+
+**`test_raises_on_wrong_dimensions()`** → verifies that a 1D input, instead of the expected 2D array of shape `(m, p)` is rejected with a `ValueError`
+
+### More comprehensive tests 3
+
+**`test_l_and_c_share_nonzero_eigenvalues()`** → verifies the property that the reduced `m x m` matrix `L` and the full `p x p` pixel space covariance matrix `C` share the same nonzero eigenvalues.
+
+## real_input_test.py
+
+Tests using representative inputs: real face images from
+the Olivetti dataset (4096 pixels each) using a subset of 10 people with 5 images each
+
+### Tests with representative inputs
+
+**`test_jacobi_converges_on_large_covariance_matrix()`** → verifies that the Jacobi eigendecomposition actually converges within `max_sweeps` on a real covariance matrix (50x50 built from real face images), rather than only on the small hand-constructed matrices.
+
+**`test_model_accuracy()`** → runs the full pipeline end-to-end (mean face, covariance matrix, Jacobi eigendecomposition, eigenface extraction, and NN classification) on real face images and checks that accuracy is real (above 0.3, compared to 0.1 for random guessing among 10 people)

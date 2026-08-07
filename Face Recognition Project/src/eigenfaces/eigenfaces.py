@@ -10,7 +10,7 @@ Extracts eigenfaces from a set of training images
 
 import numpy as np
 
-from linalg.jacobi import jacobi_eigenvalue
+from src.linalg.jacobi import jacobi_eigenvalue
 
 
 def compute_eigenfaces(mean_subtracted, L, num_components=None):

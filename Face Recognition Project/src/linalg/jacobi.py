@@ -1,40 +1,6 @@
 import numpy as np
 from math import sqrt
 
-def jacobi_eigenvalue_classic(A, tol=1e-14, max_iter=40000):
-    '''
-    NOT IN USE
-
-    Diagonalizes a symmetric matrix using the Jacobi eigenvalue algorithm, that is, at each step, 
-    finds the largest off-diagonal element and applies
-    a rotation that zeroes it out, repeating until all off-diagonal
-    elements are below "tol".
-
-    Inputs: 
-        symmetric matrix A
-        the largest allowed off-diagonal element threshold
-        maximum iterations
-
-    Returns:
-        eigenvalues: vector of eigenvalues
-        eigenvectors: matrix where each column eigenvectors[:, i] is the eigenvector for eigenvalues[i]
-        number of iterations performed
-    '''
-    a = A.copy().astype(float)
-    n = a.shape[0]
-    v = np.identity(n)  # accumulates rotations
-
-    for iteration in range(max_iter):
-        max_val, k, l = max_off_diagonal(a, n)
-
-        if max_val < tol:
-            return np.diag(a), v, iteration
-
-        rotate(a, v, n, k, l)
-
-    print("The matrix did not converge within max_iter")
-    return np.diag(a), v, max_iter
-
 def jacobi_eigenvalue(A, tol=1e-10, max_sweeps=100):
     """
     Diagonalizes a symmetric matrix using cyclic Jacobi sweeps: every off-diagonal pair (p, q) is rotated once per sweep 

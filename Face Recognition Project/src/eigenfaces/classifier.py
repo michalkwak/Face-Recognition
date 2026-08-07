@@ -4,7 +4,7 @@ Nearest-neighbor classification in eigenface space
 
 import numpy as np
 
-from eigenfaces.eigenfaces import project_to_eigenspace
+from src.eigenfaces.eigenfaces import project_to_eigenspace
 
 
 def project_all(images, mean_face, eigenfaces):
