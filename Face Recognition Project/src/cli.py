@@ -10,11 +10,11 @@ import argparse
 import numpy as np
 from sklearn.datasets import fetch_olivetti_faces
 
-from eigenfaces.mean_face import compute_mean_face, mean_subtract
-from eigenfaces.covariance_matrix import compute_covariance_matrix
-from eigenfaces.eigenfaces import compute_eigenfaces
-from eigenfaces.classifier import project_all, predict
-from data.visualization import show_eigenfaces, show_mean_face
+from src.eigenfaces.mean_face import compute_mean_face, mean_subtract
+from src.eigenfaces.covariance_matrix import compute_covariance_matrix
+from src.eigenfaces.eigenfaces import compute_eigenfaces
+from src.eigenfaces.classifier import project_all, predict
+from src.data.visualization import show_eigenfaces, show_mean_face
 
 def load_train_test_split():
     """

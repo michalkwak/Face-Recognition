@@ -1,4 +1,4 @@
-import data.face_dataset_loader
+import src.data.face_dataset_loader
 import matplotlib.pyplot as plt
 from math import ceil, sqrt
 

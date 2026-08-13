@@ -11,7 +11,8 @@ from src.linalg.jacobi import jacobi_eigenvalue
 def load_test_data(num_people=10, images_per_person=5):
     """Loads a small subset from the Olivetti dataset"""
     data = fetch_olivetti_faces()
-    images = data.images.reshape(len(data.images), -1)
+    #images = data.images.reshape(len(data.images), -1)
+    images = np.reshape(data.images, (len(data.images), -1))
     labels = data.target
 
     subset_images, subset_labels = [], []

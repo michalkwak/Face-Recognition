@@ -82,3 +82,21 @@ the Olivetti dataset (4096 pixels each) using a subset of 10 people with 5 image
 **`test_jacobi_converges_on_large_covariance_matrix()`** → verifies that the Jacobi eigendecomposition actually converges within `max_sweeps` on a real covariance matrix (50x50 built from real face images), rather than only on the small hand-constructed matrices.
 
 **`test_model_accuracy()`** → runs the full pipeline end-to-end (mean face, covariance matrix, Jacobi eigendecomposition, eigenface extraction, and NN classification) on real face images and checks that accuracy is real (above 0.3, compared to 0.1 for random guessing among 10 people)
+
+## eigenfaces_test.py
+
+### Unit Tests 4
+
+**`test_eigenfaces_have_correct_shape()`** → verifies that `compute_eigenfaces` returns eigenfaces and eigenvalues with the expected shapes, `(p, k)` and `(k,)`
+
+**`test_eigenfaces_are_unit_length()`** → verifies that every returned eigenface has been normalized to unit length
+
+**`test_projecting_mean_face_gives_zero_weights()`** → verifies that projecting the mean face into eigenspace should give a weight vector of all zeros since the mean face has nothing different from itself
+
+## loader_test.py
+
+### Unit Tests 5
+
+**`test_no_person_appears_in_both_train_and_test()`** → verifies that the train/test split includes every person in both sets correctly
+
+**`test_test_set_has_one_image_per_person()`** → verifies that the test set contains exactly one image per person
