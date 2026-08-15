@@ -8,21 +8,32 @@ projecting them into this space and finding the nearest training face by distanc
 The core pipeline (mean face, covariance matrix, eigenvalue decomposition and NN classification) is fully implemented and (almost) tested.
 Using the Olivetti dataset, the program produces around 85% accuracy with 20 components.
 
-# Installation and running the program
+## Installation and running the program
 
 Install the dependencies:
 
-<code>poetry install</code>
+```python
+poetry install
+```
 
 To run the program:
 
-<code>poetry run python src/cli.py --num-components 20</code>
+```python
+poetry run python src/cli.py --num-components 20
+```
 
-'--num-components' controls how many eigenfaces are kept (default is 20).
+`--num-components` controls how many eigenfaces are kept (default is 20).
 
 ## Tests
 
 To run tests:
 
-<code>poetry run pytest</code>
+```python
+poetry run pytest src
+```
 
+## Results
+
+![Accuracy vs number of components](Documentation\accuracy_vs_num_components.png)
+
+![Accuracy vs training size](Documentation\accuracy_vs_training_size.png)
