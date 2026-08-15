@@ -1,11 +1,11 @@
 import numpy as np
 from sklearn.datasets import fetch_olivetti_faces
 
-from src.eigenfaces.mean_face import compute_mean_face, mean_subtract
-from src.eigenfaces.covariance_matrix import compute_covariance_matrix
-from src.eigenfaces.eigenfaces import compute_eigenfaces
-from src.eigenfaces.classifier import project_all, predict
-from src.linalg.jacobi import jacobi_eigenvalue
+from eigenfaces.mean_face import compute_mean_face, mean_subtract
+from eigenfaces.covariance_matrix import compute_covariance_matrix
+from eigenfaces.eigenfaces import compute_eigenfaces
+from eigenfaces.classifier import project_all, predict
+from linalg.jacobi import jacobi_eigenvalue
 
 
 def load_test_data(num_people=10, images_per_person=5):

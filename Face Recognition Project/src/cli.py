@@ -10,11 +10,11 @@ import argparse
 import numpy as np
 from sklearn.datasets import fetch_olivetti_faces
 
-from src.eigenfaces.mean_face import compute_mean_face, mean_subtract
-from src.eigenfaces.covariance_matrix import compute_covariance_matrix
-from src.eigenfaces.eigenfaces import compute_eigenfaces
-from src.eigenfaces.classifier import project_all, predict
-from src.data.visualization import show_eigenfaces, show_mean_face
+from eigenfaces.mean_face import compute_mean_face, mean_subtract
+from eigenfaces.covariance_matrix import compute_covariance_matrix
+from eigenfaces.eigenfaces import compute_eigenfaces
+from eigenfaces.classifier import project_all, predict
+from data.visualization import show_eigenfaces, show_mean_face
 
 def load_train_test_split():
     """
@@ -62,7 +62,9 @@ def compare(mean_face, eigenfaces, train_images, train_labels, test_images, test
 
     correct = 0
     for image, true_label in zip(test_images, test_labels):
-        predicted_label, distance = predict(image, mean_face, eigenfaces, train_weights, train_labels)
+        predicted_label, distance = predict(
+            image, mean_face, eigenfaces, train_weights, train_labels
+        )
         is_correct = predicted_label == true_label
         correct += is_correct
 
@@ -73,8 +75,9 @@ def compare(mean_face, eigenfaces, train_images, train_labels, test_images, test
 
 
 def main():
+    '''Run the whole model'''
     parser = argparse.ArgumentParser(description="Eigenfaces face recognition")
-    parser.add_argument("--num-components", type=int, default=20) # how many top (most meaningful) eigenfaces to keep
+    parser.add_argument("--num-components", type=int, default=20) # how many top eigenfaces to keep
     args = parser.parse_args()
 
     print("Loading dataset")

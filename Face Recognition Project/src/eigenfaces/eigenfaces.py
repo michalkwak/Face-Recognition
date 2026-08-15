@@ -10,7 +10,7 @@ Extracts eigenfaces from a set of training images
 
 import numpy as np
 
-from src.linalg.jacobi import jacobi_eigenvalue
+from linalg.jacobi import jacobi_eigenvalue
 
 
 def compute_eigenfaces(mean_subtracted, L, num_components=None):
@@ -19,11 +19,14 @@ def compute_eigenfaces(mean_subtracted, L, num_components=None):
 
     Inputs:
         mean_subtracted: 2D matrix of shape (m, p), mean-subtracted training images, one image per row
-        L: 2D matrix of shape (m, m) (the output of covariance.compute_covariance_matrix)
+
+        L: 2D reduced matrix of shape (m, m)
+
         num_components: how many eigenfaces to keep, ordered by eigenvalue, descending
 
     Returns:
         eigenfaces: 2D matrix of shape (p, k), one eigenface per column, each normalized to unit length
+
         eigenvalues: 1D vector of shape k, the corresponding eigenvalues, descending
     """
 

@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from src.linalg.jacobi import max_off_diagonal, rotate, jacobi_eigenvalue
+from linalg.jacobi import max_off_diagonal, rotate, jacobi_eigenvalue
 
 class TestMaxOffDiagonal(unittest.TestCase):
     '''Tests for finding the largest off diagonal element'''

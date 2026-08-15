@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
 
-from src.eigenfaces.covariance_matrix import compute_covariance_matrix
-from src.eigenfaces.covariance_matrix import compute_full_covariance_matrix
+from eigenfaces.covariance_matrix import compute_covariance_matrix
+from eigenfaces.covariance_matrix import compute_full_covariance_matrix
 
 
 

@@ -1,8 +1,7 @@
-import src.data.face_dataset_loader
-import matplotlib.pyplot as plt
 from math import ceil, sqrt
+import matplotlib.pyplot as plt
 
-def showImgs(imgs, n_imgs, i_imgs):
+def show_imgs(imgs, n_imgs, i_imgs):
     '''Plot the Olivetti faces dataset'''
     rows = ceil(sqrt(n_imgs))
     cols = ceil(n_imgs / rows)
@@ -54,6 +53,3 @@ def show_mean_face(mean_face, image_shape):
     plt.title("Mean face")
     plt.axis("off")
     plt.show()
-
-
-

@@ -36,4 +36,4 @@ as well as the difference between classical and cyclic Jacobi
 - Turk, M.A. & Pentland, A.L. (1991). "Face recognition using eigenfaces." Proc. IEEE Computer Society Conf. on Computer Vision and Pattern Recognition, pp. 586-591
 - Rizon, M. et al. (2006). "Face Recognition using Eigenfaces and Neural Networks." American Journal of Applied Sciences, 2(6), 1872-1875
 - Wikipedia articles on Eigenface, Jacobi eigenvalue algorithm, and Principal component analysis
-- Olivetti/ORL Face Database (via `scikit-learn`)
+- Olivetti/ORL Face Database (`scikit-learn`)

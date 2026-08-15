@@ -1,8 +1,8 @@
 import numpy as np
 
-from src.eigenfaces.mean_face import compute_mean_face, mean_subtract
-from src.eigenfaces.covariance_matrix import compute_covariance_matrix
-from src.eigenfaces.eigenfaces import compute_eigenfaces, project_to_eigenspace
+from eigenfaces.mean_face import compute_mean_face, mean_subtract
+from eigenfaces.covariance_matrix import compute_covariance_matrix
+from eigenfaces.eigenfaces import compute_eigenfaces, project_to_eigenspace
 
 
 def test_eigenfaces_have_correct_shape():

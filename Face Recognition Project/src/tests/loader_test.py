@@ -1,4 +1,4 @@
-from src.cli import load_train_test_split
+from cli import load_train_test_split
 
 
 def test_no_person_appears_in_both_train_and_test():

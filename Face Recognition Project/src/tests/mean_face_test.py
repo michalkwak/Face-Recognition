@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from src.eigenfaces.mean_face import compute_mean_face, mean_subtract
+from eigenfaces.mean_face import compute_mean_face, mean_subtract
 
 
 class TestComputeMeanFace(unittest.TestCase):
