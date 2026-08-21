@@ -8,6 +8,13 @@ projecting them into this space and finding the nearest training face by distanc
 The core pipeline (mean face, covariance matrix, eigenvalue decomposition and NN classification) is fully implemented and (almost) tested.
 Using the Olivetti dataset, the program produces around 85% accuracy with 20 components.
 
+## Documentation
+
+- [Specifications document](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/Specification%20Document.md)
+- [Implementation document](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/Implementation%20Document.md)
+- [Testing document](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/Testing%20Documentation.md)
+- [User guide](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/User%20Guide.md)
+
 ## Structure
 
 - `src/linalg/jacobi.py` - the Jacobi eigenvalue algorithm implemented from scratch. Takes a symmetric matrix and returns its eigenvalues and eigenvectors
@@ -18,30 +25,6 @@ Using the Olivetti dataset, the program produces around 85% accuracy with 20 com
 - `src/data/loader.py` and `src/eigenfaces/visualization.py` - loading the Olivetti face dataset and displaying images/eigenfaces
 - `src/cli.py` - command-line interface for running the program: loads data, trains, tests, prints accuracy
 - `src/tests/` - unit and end-to-end tests
-
-## Installation and running the program
-
-Install the dependencies:
-
-```python
-poetry install
-```
-
-To run the program:
-
-```python
-poetry run python src/cli.py --num-components 20
-```
-
-`--num-components` controls how many eigenfaces are kept (default is 20).
-
-## Tests
-
-To run tests:
-
-```python
-poetry run pytest src
-```
 
 ## Results
 

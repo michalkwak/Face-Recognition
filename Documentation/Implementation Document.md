@@ -8,7 +8,11 @@ The general pipeline is: load face images → compute the mean face → subtract
 
 ## Achieved time and space complexity
 
-...
+- **Mean face and mean-subtraction:** O(m x p) time, since it goes through every pixel of every image once. O(m x p) space to store the mean-subtracted images.
+- **Covariance matrix (`L = A_mp * A_mp^T`):** O(m^2 x p) time (an `m x m` matrix, each entry is a dot product over `p` pixels). O(m^2) space for the matrix.
+- **Jacobi eigendecomposition on the `m x m` matrix:** I ended up using the cyclic version (go through every off-diagonal pair once per sweep, repeat sweeps until convergence) instead of the classical version (always pick the single largest off-diagonal element). Each sweep touches all `m(m-1)/2` off-diagonal pairs, and rotating one pair costs O(m) work, so one sweep is O(m^3). In practice it converged in well under 100 sweeps on real data, so the total cost is around O(m^3) with a small constant number of sweeps. Space is O(m^2) for the matrix and the eigenvector accumulator.
+- **Recovering eigenfaces (`u_i = A_mp^T  x  v_i`):** O(m x p) time, O(k x p) space for the `k` eigenfaces kept.
+- **Classifying a new face:** O(k) to project it, O(m x k) to compare against all training faces.
 
 ## Performance comparison
 
