@@ -60,6 +60,12 @@ class TestComputeFullCovarianceMatrix(unittest.TestCase):
 
         self.assertEqual(c_matrix.shape, (6, 6))
 
+    def test_raises_on_wrong_dimensions(self):
+        mean_subtracted = np.array([1.0, 2.0, 3.0])
+
+        with self.assertRaises(ValueError):
+            compute_full_covariance_matrix(mean_subtracted)
+
     def test_result_is_symmetric(self):
         mean_subtracted = np.random.rand(4, 6)
 

@@ -100,3 +100,25 @@ the Olivetti dataset (4096 pixels each) using a subset of 10 people with 5 image
 **`test_no_person_appears_in_both_train_and_test()`** → verifies that the train/test split includes every person in both sets correctly
 
 **`test_test_set_has_one_image_per_person()`** → verifies that the test set contains exactly one image per person
+
+## Coverage report
+
+| Name                                   |    Stmts |     Miss |   Branch |   BrPart |   Cover |   Missing              |
+|--------------------------------------- | -------: | -------: | -------: | -------: | ------: | --------:              |
+| src\\cli.py                            |       55 |       26 |        8 |        1 |     54% |50-56, 61-74, 79-93, 97 |
+| src\\data\\\_\_init\_\_.py             |        0 |        0 |        0 |        0 |    100% |                        |
+| src\\data\\visualization.py            |       32 |       27 |        4 |        0 |     14% |6-17, 29-44, 49-55      |
+| src\\eigenfaces\\classifier.py         |       17 |        0 |        6 |        0 |    100% |                        |
+| src\\eigenfaces\\covariance\_matrix.py |       10 |        1 |        6 |        1 |     88% |        39              |
+| src\\eigenfaces\\eigenfaces.py         |       19 |        1 |        4 |        1 |     91% |        37              |
+| src\\eigenfaces\\mean\_face.py         |       11 |        0 |        6 |        0 |    100% |                        |
+| src\\linalg\\\_\_init\_\_.py           |        0 |        0 |        0 |        0 |    100% |                        |
+| src\\linalg\\jacobi.py                 |       54 |        2 |       28 |        1 |     96% |     28-29              |
+| src\\tests\\\_\_init\_\_.py            |        0 |        0 |        0 |        0 |    100% |                        |
+| src\\tests\\covariance\_test.py        |       47 |        8 |        0 |        0 |     83% |67-69, 72, 85-88, 93-95 |
+| src\\tests\\eigenfaces\_test.py        |       25 |        0 |        0 |        0 |    100% |                        |
+| src\\tests\\jacobi\_test.py            |       69 |        0 |        2 |        0 |    100% |                        |
+| src\\tests\\loader\_test.py            |        7 |        0 |        0 |        0 |    100% |                        |
+| src\\tests\\mean\_face\_test.py        |       42 |        0 |        0 |        0 |    100% |                        |
+| src\\tests\\real\_input\_test.py       |       47 |        0 |        6 |        0 |    100% |                        |
+| **TOTAL**                              |  **435** |   **65** |   **70** |    **4** | **85%** |                        |
