@@ -28,6 +28,6 @@ Using the Olivetti dataset, the program produces around 85% accuracy with 20 com
 
 ## Results
 
-![Accuracy vs number of components](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/accuracy_vs_num_components.png)
+![Accuracy vs number of components](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/Results/accuracy_vs_num_components.png)
 
-![Accuracy vs training size](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/accuracy_vs_training_size.png)
+![Accuracy vs training size](https://github.com/michalkwak/Face-Recognition/blob/main/Documentation/Results/accuracy_vs_training_size.png)
