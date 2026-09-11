@@ -4,12 +4,6 @@
 
 ### Unit tests 1
 
-**`test_finds_correct_element()`** → verifies that `max_off_diagonal` correctly identifies both the magnitude and the (row, column) indices of the largest off-diagonal element in a 3x3 symmetric matrix
-
-**`test_diagonal_matrix_returns_zero()`** → verifies that a diagonal matrix returns a max value of exactly 0, confirming the convergence check will correctly trigger immediately
-
-**`test_finds_largest_absolute_negative()`** → verifies that the function compares elements by absolute value rather than raw value, correctly finding a large negative element over a smaller positive one
-
 **`test_zeroes_target_element()`** → verifies that a single rotation drives the targeted off-diagonal element `a[k, l]` to (approximately) zero
 
 **`test_preserves_trace()`** → verifies that the sum of diagonal elements is unchanged after a rotation, since a similarity transformation must preserve the trace (and therefore the sum of eigenvalues) of the matrix

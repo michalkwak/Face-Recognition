@@ -6,7 +6,7 @@ variation across the training faces, then classifies new, unseen face images by
 projecting them into this space and finding the nearest training face by distance.
 
 The core pipeline (mean face, covariance matrix, eigenvalue decomposition and NN classification) is fully implemented and tested.
-Using the Olivetti dataset, the program produces around 85% accuracy with 20 components.
+Using the Olivetti dataset, the program produces around 87.5% accuracy with 20 components.
 
 ## Documentation
 

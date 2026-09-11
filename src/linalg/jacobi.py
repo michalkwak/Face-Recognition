@@ -28,18 +28,6 @@ def jacobi_eigenvalue(a, tol=1e-10, max_sweeps=100):
     print("The matrix did not converge within max_sweeps")
     return np.diag(a), v, max_sweeps
 
-def max_off_diagonal(a, n):
-    '''Returns the largest off-diagonal element of a[p, q] where p < q'''
-    max_val = 0.0
-    k, l = 0, 1
-
-    for i in range(n-1):
-        for j in range(i+1, n):
-            if abs(a[i, j]) > max_val:
-                max_val = abs(a[i, j])
-                k, l = i, j
-    return max_val, k, l
-
 def rotate(a, v, n, k, l):
     '''Rotate 'a' in place to eliminate a[p, q] (only operates the upper triangle, since matrix is symmetric). 
     Accumulate all the rotations into v, which becomes the eigenvectors'''
